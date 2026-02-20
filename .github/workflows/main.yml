@@ -18,9 +18,12 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and Push Image
-        run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/password-gen:latest .
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/password-gen:latest
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          # This builds and pushes in one step to avoid the "missing context" error
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/password-gen:latest
 
   deploy:
     needs: build-and-push
@@ -29,7 +32,7 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
+          # Change 'Random-password-generator' to your ACTUAL Azure Web App name
           app-name: 'Random-password-generator'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           images: '${{ secrets.DOCKERHUB_USERNAME }}/password-gen:latest'
-          
