@@ -26,7 +26,7 @@ Azure Deployment: Automatically triggers a deployment to Azure App Service, pull
 
 How to Run Locally:
 
-You can view the live application here:random-password-generator-bmhtekgkesh5esbr.austriaeast-01.azurewebsites.net
+You can view the live application here: random-password-generator-bmhtekgkesh5esbr.austriaeast-01.azurewebsites.net
 
 Clone the repository:
 Bash
