@@ -53,7 +53,7 @@ The pipeline automates the entire lifecycle from code commit to cloud deployment
  ![The CI/CD pipeline successfully builds and deploys the application.](images/githubActions.png)
  
 **3) Docker Hub Repository**
- ![The Docker image is versioned and stored in a public registry.](images/Dockerimg.png)
+ ![The Docker image is versioned and stored in a public registry.](images/DockerImg.png)
 
 **4) Azure App Service Deployment**
  ![The application is hosted on Microsoft Azure with high availability.](images/azure.png)
