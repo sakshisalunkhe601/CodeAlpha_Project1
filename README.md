@@ -1,48 +1,65 @@
-CodeAlpha_Project1: CI/CD Pipeline using Azure
+🚀 CodeAlpha_Project1: CI/CD Pipeline with Azure
 
-Project Overview
-This project demonstrates a fully automated CI/CD Pipeline designed to build, containerize, and deploy a Flask-based web application to the cloud. The goal was to implement a "Cloud Native" workflow that ensures every code change is automatically tested, packaged, and updated on the live server.
+🌟Project Overview
+This repository contains a fully automated Cloud-Native CI/CD Pipeline built for the CodeAlpha DevOps Internship. The project automates the deployment of a Random Password Generator web application to the cloud, ensuring high availability and seamless updates.
+
+Task 1: Build an automated CI/CD pipeline with Azure and deploy web apps via Azure App Service automatically.
+
+🛠️ Tech Stack
+LanguagePython (Flask)
+ContainerizationDocker
+Source ControlGitHub
+CI/CD PlatformGitHub Actions
+Cloud HostingMicrosoft Azure App Service
+RegistryDocker Hub
 
 
-Technical Stack
+📸Project Preview
 
-Application: Python (Flask)
+🌐 Live Application
+The application is live and accessible at:
+👉 random-password-generator-bmhtekgkesh5esbr.austriaeast-01.azurewebsites.net
 
-Containerization: Docker 
+⚙️ Pipeline Success
+Every commit triggers an automated build and deployment process.
 
-CI/CD Platform: GitHub Actions 
+🧬 Pipeline Architecture
+The workflow follows these automated steps to ensure code quality and deployment speed:
 
-Registry: Docker Hub (Transitioning to Azure Container Registry) 
+Checkout Code: Pulls the source from GitHub.
 
-Cloud Provider: Azure App Service 
+Dockerize: Builds a lightweight Docker image of the Flask app.
 
-CI/CD Workflow
+Push to Registry: Securely uploads the image to Docker Hub.
 
-The pipeline is defined in .github/workflows/main.yml and consists of the following automated steps:
-Code Checkout: Pulls the latest code from the main branch.
-Docker Login: Authenticates with the container registry using secure secrets.
-Build & Push: Builds a Docker image of the application and pushes it to the registry.
-Azure Deployment: Automatically triggers a deployment to Azure App Service, pulling the latest container image to update the live website.
+Azure Deployment: Triggers Azure App Service to pull the latest image and restart the web server.
 
-How to Run Locally:
 
-You can view the live application here: random-password-generator-bmhtekgkesh5esbr.austriaeast-01.azurewebsites.net
+🚀 How to Run LocallyWant to test this project on your machine? Follow these steps:
 
-Clone the repository:
+Clone the Repo:
 Bash
 git clone https://github.com/sakshisalunkhe601/CodeAlpha_Project1.git
 
-Build the Docker image:
-Bash
-docker build -t password-gen .
+Build the Container:
+Bashdocker build -t password-gen .
 
-Run the container:
-Bash
-docker run -p 5000:5000 password-gen
+Launch the App:
+Bashdocker run -p 5000:5000 password-gen
 
-Internship Task Requirements
+📁 Repository StructurePlaintextCodeAlpha_Project1/
+├── .github/workflows/
+│   └── main.yml        # CI/CD Pipeline Definition
+├── static/             # CSS and Frontend Assets
+├── templates/          # HTML Templates
+├── app.py              # Flask Application Logic
+├── Dockerfile          # Container Configuration
+└── requirements.txt    # Python Dependencies
 
-According to the CodeAlpha internship instructions:
-Task 1: Build an automated CI/CD pipeline with Azure.
-Status: Successfully implemented and monitored for smooth execution.
-Repository Name: CodeAlpha_Project1.
+🎓 Internship Requirements Checklist
+[x]Repository Named: CodeAlpha_ProjectName 
+[x] Automated CI/CD Pipeline: Built with GitHub Actions 
+[x] Live Cloud Deployment: Hosted on Azure  
+
+🤝 Connect with Me
+www.linkedin.com/in/sakshi-salunkhe-758005319
